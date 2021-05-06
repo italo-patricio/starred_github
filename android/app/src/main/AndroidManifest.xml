@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.italopatricio.starred_github">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
    <application
         android:label="starred_github"
         android:icon="@mipmap/ic_launcher">

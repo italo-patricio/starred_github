@@ -7,8 +7,13 @@ class GithubUserModel {
 
   GithubUserModel.fromJson(Map<String, dynamic> json) {
     login = json['login'];
-    name = json['email'];
+    name = json['name'];
     company = json['company'];
+  }
+
+  @override
+  String toString() {
+    return "$name ($login) - $company";
   }
 }
 
@@ -22,7 +27,7 @@ class ResultQueryUser {
     if (json == null) return;
 
     if (hasDataAndUser(json)) {
-      data = GithubUserModel.fromJson(json['data']['user']);
+      data = GithubUserModel.fromJson(json['user']);
     }
     if (hasError(json)) {
       errors = <Errors>[];
@@ -33,7 +38,7 @@ class ResultQueryUser {
   }
 
   bool hasDataAndUser(Map<String, dynamic> json) {
-    return json['data'] != null && json['data']['user'] != null;
+    return json != null && json['user'] != null;
   }
 
   bool hasError(Map<String, dynamic> json) {

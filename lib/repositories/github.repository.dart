@@ -1,14 +1,17 @@
-import 'package:starred_github/models/result_query.model.dart';
-import 'package:hasura_connect/hasura_connect.dart';
-import 'package:starred_github/repositories/queries/user_query.dart';
+import 'package:graphql/client.dart';
+
+import 'queries/user_query.dart';
 
 class GithubRepository {
-  final HasuraConnect _hasuraConnect;
+  final GraphQLClient _graphqlClient;
 
-  GithubRepository(this._hasuraConnect);
+  GithubRepository(this._graphqlClient);
 
-  Future<ResultQueryUser> findUserByLogin(String login) async {
-    final result = await this._hasuraConnect.query(getRepoByUserQuery);
-    return ResultQueryUser.fromJson(result);
+  Future<QueryResult> findUserByLogin(String login) async {
+    final queryOptions = QueryOptions(
+      document: gql(getRepoByUserQuery),
+      variables: <String, String>{'login': login},
+    );
+    return await this._graphqlClient.query(queryOptions);
   }
 }

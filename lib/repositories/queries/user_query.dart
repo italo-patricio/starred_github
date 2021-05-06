@@ -1,9 +1,9 @@
-const getRepoByUserQuery = ''' 
-  query { 
-	user(login: "italo-patricioa"){
-   name
-   login
-   company
+const getRepoByUserQuery = r''' 
+  query($login: String!) { 
+    user(login: $login){
+    name
+    login
+    company
+    }
   }
-}
 ''';
