@@ -33,7 +33,7 @@ void main() {
       final loginToSearch = "italo-patricio";
 
       final queryOptions = QueryOptions(
-          document: gql(getRepoByUserQuery),
+          document: gql(getUserByLoginQuery),
           variables: {'login': '$loginToSearch'});
 
       final queryResults = QueryResult(
@@ -57,7 +57,7 @@ void main() {
       final loginToSearch = "italo";
 
       final queryOptions = QueryOptions(
-          document: gql(getRepoByUserQuery),
+          document: gql(getUserByLoginQuery),
           variables: {'login': loginToSearch});
 
       when(link.request(any)).thenAnswer(
