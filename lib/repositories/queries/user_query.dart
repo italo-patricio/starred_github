@@ -14,7 +14,7 @@ const getUserByLoginQuery = r'''
 
 const searchUsersBy = r'''
   query($search: String!) {
-    search(type: USER, first: 10, query: $search) {
+    search(type: USER, first: 100, query: $search) {
       nodes {
         ... on User {
             name
