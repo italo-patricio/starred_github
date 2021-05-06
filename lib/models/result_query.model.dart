@@ -1,5 +1,3 @@
-import 'package:starred_github/repositories/github.repository.dart';
-
 class GithubUserModel {
   String login;
   String name;
