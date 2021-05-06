@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:starred_github/models/result_query.model.dart';
+import 'package:starred_github/models/github_user.model.dart';
 import 'package:starred_github/repositories/github.repository.dart';
 
 class SearchUserController {

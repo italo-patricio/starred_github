@@ -8,6 +8,14 @@ const getUserByLoginQuery = r'''
       location
       email
       url
+      starredRepositories{
+        totalCount
+        nodes{
+          name
+          description
+          stargazerCount
+        }
+      }
     }
   }
 ''';

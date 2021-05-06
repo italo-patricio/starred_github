@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:starred_github/constants/routes_const.dart';
-import 'package:starred_github/models/result_query.model.dart';
-import 'package:starred_github/pages/search_user_controller.dart';
+import 'package:starred_github/models/github_user.model.dart';
+
 import 'package:starred_github/repositories/github.repository.dart';
+
+import 'search_user_controller.dart';
 
 class SearchUserPage extends StatefulWidget {
   final GithubRepository repository;
@@ -83,7 +85,8 @@ class _SearchUserPageState extends State<SearchUserPage> {
                             child: Text("Repositórios\nEstrelados"),
                             onPressed: () {
                               Navigator.pushNamed(
-                                  context, RoutesConst.SHOW_REPO);
+                                  context, RoutesConst.SHOW_REPO,
+                                  arguments: user.login);
                             },
                           ));
                     },

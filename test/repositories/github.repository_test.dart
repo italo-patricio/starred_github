@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:graphql/client.dart';
-import 'package:starred_github/models/result_query.model.dart';
+import 'package:starred_github/models/github_user.model.dart';
 import 'package:starred_github/repositories/github.repository.dart';
 import 'package:starred_github/repositories/queries/user_query.dart';
 import 'package:mockito/mockito.dart';

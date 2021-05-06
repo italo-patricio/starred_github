@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:starred_github/models/result_query.model.dart';
+import 'package:starred_github/models/github_user.model.dart';
 
 import '../mocks/mocks_result.dart';
 
